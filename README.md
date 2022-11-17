@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-17 17:26:41
- * @LastEditTime: 2022-11-17 17:53:20
+ * @LastEditTime: 2022-11-17 20:24:42
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /Y-render/README.md
@@ -10,8 +10,9 @@
 # Vue 3 + TypeScript + Vite
 
 ```
-                 LowCode
-本项目使用vue3 + tsx + vite +elementPlus 构建的lowCode平台
+LowCode
+
+本项目使用vue3 + vite +elementPlus 构建的lowCode平台
 
 ```
 
