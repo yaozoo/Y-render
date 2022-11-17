@@ -1,0 +1,43 @@
+:deep(.el-checkbox) {
+  font-weight: normal;
+}
+.hide-item {
+  display: none !important;
+}
+.search-form-box {
+  vertical-align: bottom;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .btn-box {
+    display: flex;
+    // display: inline-block;
+  }
+  &.not-rules {
+    .el-form-item--small {
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    margin-bottom: 2px;
+  }
+
+  &.has-rules {
+    .el-form-item--small {
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+  }
+}
+:deep(.el-input__inner) {
+  text-align: left;
+}
+.form-move-search {
+  vertical-align: middle;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  // display: inline-block;
+  color: #2d8cf0;
+  font-size: 12px;
+}
