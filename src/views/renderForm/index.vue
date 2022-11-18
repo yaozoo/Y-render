@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2022-11-17 17:12:00
+ * @LastEditTime: 2022-11-18 18:26:34
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/index.vue
+ * @FilePath: /Y-render/src/views/renderForm/index.vue
 -->
 <template>
   <Top />
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { provide, reactive, ref } from "vue-demi";
+import { defineComponent, provide, reactive, ref } from "vue-demi";
 import { useRouter } from "vue-router";
 import CompItem from "./component/left/compItem.vue";
 import Exhibit from "./component/middle/exhibit.vue";
@@ -63,6 +63,11 @@ let widget: any = reactive([
   },
 ]);
 provide("widget", widget);
+</script>
+<script lang="ts">
+export default defineComponent({
+  name: "RenderForm",
+});
 </script>
 <style lang="less" scoped>
 .warper {

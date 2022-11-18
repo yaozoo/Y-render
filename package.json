@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./dist/y-render.umd.cjs",
   "module": "./dist/y-render.js",
+  "types": "./dist/components/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/y-render.js",
@@ -13,7 +14,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --config vite.config.ts",
+    "build_lib": "vite  build --config vite-lib-render.config.ts",
     "preview": "vite preview"
   },
   "keywords": [

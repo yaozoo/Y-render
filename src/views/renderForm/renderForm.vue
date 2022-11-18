@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 18:46:06
- * @LastEditTime: 2022-11-18 15:52:19
+ * @LastEditTime: 2022-11-18 18:26:12
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/renderForm.vue
@@ -51,6 +51,6 @@ function formatData(data: any) {
 </script>
 <script lang="ts">
 export default defineComponent({
-  name: "RenderForm",
+  name: "RenderFormComp",
 });
 </script>
