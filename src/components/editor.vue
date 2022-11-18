@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts">
-import { API } from "@/api";
+// import { API } from "@/api";
 import {
   defineComponent,
   onBeforeUnmount,
@@ -45,7 +45,9 @@ export default defineComponent({
   setup(props, { emit }) {
     let ckeditor: any;
     let value = ref(props.value);
-    let id = ref(`Ckeditor${parseInt(Math.random() * 10000).toString()}`);
+    let id = ref(
+      `Ckeditor${parseInt((Math.random() * 10000) as any).toString()}`
+    );
 
     let editorConfig = reactive({
       removePlugins: ["about"],
@@ -65,7 +67,7 @@ export default defineComponent({
       // 只读模式
       readOnly: props.disabled,
       // filebrowserUploadUrl: API.uploadFileDMM(),
-      filebrowserUploadUrl: props.uploadUrl || API.uploadFileDMM(),
+      // filebrowserUploadUrl: props.uploadUrl || API.uploadFileDMM(),
       fileTools_requestHeaders: {
         // "X-Requested-With": "XMLHttpRequest",
         token: "7777777!",

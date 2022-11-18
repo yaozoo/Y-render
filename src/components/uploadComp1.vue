@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-03-28 21:43:38
- * @LastEditTime: 2022-11-17 17:13:59
+ * @LastEditTime: 2022-11-18 17:39:53
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/components/uploadComp1.vue
+ * @FilePath: /Y-render/src/components/uploadComp1.vue
 -->
 
 <template>
@@ -212,7 +212,7 @@ export default defineComponent({
       return ElMessage.warning(` 文件数量不得超过 ${imgLength.value} 个`);
     };
 
-    const handleError = (file) => {
+    const handleError = (file: any) => {
       console.log(file, 123456);
     };
 

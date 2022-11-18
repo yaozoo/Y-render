@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-01-28 18:31:09
- * @LastEditTime: 2022-11-17 17:13:39
+ * @LastEditTime: 2022-11-18 17:37:28
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/components/fileUpload.vue
+ * @FilePath: /Y-render/src/components/fileUpload.vue
 -->
 
 <template>
@@ -12,7 +12,7 @@
   <el-upload
     ref="elFileUpload"
     style="display: inline-block"
-    :action="fileUrl()"
+    :action="(fileUrl as any)()"
     :accept="format.toString()"
     :with-credentials="true"
     :show-file-list="fileListShow"

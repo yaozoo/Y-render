@@ -1,10 +1,10 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-05-17 21:09:46
- * @LastEditTime: 2022-11-17 17:13:47
+ * @LastEditTime: 2022-11-18 17:34:07
  * @LastEditors: luyao
  * @Description: 
- * @FilePath: /y-render/src/components/numberRange.vue
+ * @FilePath: /Y-render/src/components/numberRange.vue
 -->
 
 <template>
@@ -46,7 +46,7 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup(props, context) {
+  setup(props: any, context) {
     let { min, max, data } = toRefs(props);
     let state = reactive({
       startNum: props.data[0],

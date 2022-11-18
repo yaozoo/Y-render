@@ -1,10 +1,10 @@
 /*
  * @Author: luyao
  * @Date: 2022-11-17 15:47:12
- * @LastEditTime: 2022-11-17 17:02:52
+ * @LastEditTime: 2022-11-18 16:00:12
  * @Description:
  * @LastEditors: luyao
- * @FilePath: /y-render/src/main.ts
+ * @FilePath: /Y-render/src/main.ts
  */
 import { createApp } from "vue";
 import "./style.css";
@@ -16,7 +16,7 @@ import "highlight.js/styles/atom-one-dark.css";
 import "highlight.js/lib/common";
 import hljsVuePlugin from "@highlightjs/vue-plugin";
 import dbsGlobalComp from "./components/index";
-import globalComponents from "@/views/renderForm/globalComponents.ts";
+import globalComponents from "@/views/renderForm/globalComponents";
 import "@/common/css/global.less";
 
 const app = createApp(App);

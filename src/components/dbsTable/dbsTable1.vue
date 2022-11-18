@@ -1,10 +1,10 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2022-11-17 17:12:59
+ * @LastEditTime: 2022-11-18 17:42:27
  * @LastEditors: luyao
  * @Description: 
- * @FilePath: /y-render/src/components/dbsTable/dbsTable1.vue
+ * @FilePath: /Y-render/src/components/dbsTable/dbsTable1.vue
 -->
 
 <template>
@@ -51,7 +51,7 @@
         :title="configFlag.indexName || '序号'" />
       <!-- 循环遍历表头展示数据 -->
       <el-table-column
-        v-for="(item, columnIndex) in columns"
+        v-for="(item, columnIndex) in (columns as any)"
         :show-overflow-tooltip="item.tooltip"
         :key="item.key"
         :width="item.width || ''"
@@ -274,7 +274,7 @@ export default defineComponent({
   ],
   setup(props, context) {
     const tableRef = ref();
-    let sortable = "";
+    let sortable: any = "";
     let tableHeight: any = ref(props.tableHeight);
     let columns: any = ref(computed(() => props.columns));
     context.emit("getTableRef", tableRef);

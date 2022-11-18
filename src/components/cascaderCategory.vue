@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2021-11-29 15:13:12
- * @LastEditTime: 2022-11-17 17:13:19
+ * @LastEditTime: 2022-11-18 17:44:46
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/components/cascaderCategory.vue
+ * @FilePath: /Y-render/src/components/cascaderCategory.vue
 -->
 
 <template>
@@ -51,7 +51,7 @@ let optData = {
     const { level } = node;
     let nodes: any[] = [];
     if (level == 0) {
-      let res = await getCategory1Data(props.FixReqData);
+      let res: any = await getCategory1Data();
       res.map(
         (item: {
           category1Id: any;
@@ -67,7 +67,7 @@ let optData = {
         }
       );
     } else if (level == 1) {
-      let res = await getCategory2Data(node.value);
+      let res: any = await getCategory2Data(node.value);
       res.map(
         (item: {
           category2Id: any;
@@ -83,7 +83,7 @@ let optData = {
         }
       );
     } else if (level == 2) {
-      let res = await getCategory3Data(node.value);
+      let res: any = await getCategory3Data(node.value);
       res.map(
         (item: {
           category3Id: any;
@@ -99,7 +99,7 @@ let optData = {
         }
       );
     } else if (level == 3) {
-      let res = await getCategory4Data(node.value);
+      let res: any = await getCategory4Data(node.value);
       res.map(
         (item: {
           category4Id: any;
@@ -138,7 +138,7 @@ function getCategory1Data() {
         // pageNum: 1,
         // pageSize: 100,
       })
-      .then((res) => {
+      .then((res: any) => {
         res.forEach(
           (item: {
             value: any;

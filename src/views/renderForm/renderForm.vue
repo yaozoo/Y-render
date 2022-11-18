@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 18:46:06
- * @LastEditTime: 2022-11-17 17:15:38
+ * @LastEditTime: 2022-11-18 15:52:19
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/renderForm.vue
+ * @FilePath: /Y-render/src/views/renderForm/renderForm.vue
 -->
 
 <template>
@@ -15,7 +15,7 @@
   </ul>
 </template>
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, defineComponent } from "vue";
 import { cloneDeep } from "lodash";
 import JsonToPage from "./component/jsonToPage/index.vue";
 let props: any = defineProps({
@@ -48,4 +48,9 @@ function formatData(data: any) {
   });
   return data;
 }
+</script>
+<script lang="ts">
+export default defineComponent({
+  name: "RenderForm",
+});
 </script>

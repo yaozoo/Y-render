@@ -1,10 +1,10 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-08 14:49:07
- * @LastEditTime: 2022-11-17 17:12:31
+ * @LastEditTime: 2022-11-18 17:30:59
  * @LastEditors: luyao
  * @Description: 
- * @FilePath: /y-render/src/components/dbsForm/dbsForm.vue
+ * @FilePath: /Y-render/src/components/dbsForm/dbsForm.vue
 -->
 <template>
   <el-form
@@ -22,7 +22,7 @@
     :rules="state.formConfig.rules || []"
     :disabled="allDisabled"
     @keydown="
-      (e) => {
+      (e:any) => {
         e.keyCode == 13 && search();
       }
     ">

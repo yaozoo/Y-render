@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 20:07:46
- * @LastEditTime: 2022-11-17 17:15:19
+ * @LastEditTime: 2022-11-18 17:31:14
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/right/setup.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/right/setup.vue
 -->
 
 <template>
@@ -21,7 +21,7 @@
 import { computed, shallowRef, ref, watch, inject, defineComponent } from "vue";
 
 let comps: any = {};
-const modules = import.meta.globEager("./../origins/*.vue");
+const modules: any = import.meta.globEager("./../origins/*.vue");
 for (const path in modules) {
   let cname = modules[path].default.name;
   comps[cname] = modules[path].default;

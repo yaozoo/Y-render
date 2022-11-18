@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-01 15:44:24
- * @LastEditTime: 2022-11-17 17:14:34
+ * @LastEditTime: 2022-11-18 17:31:21
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/jsonToPage/widget/TableWidget.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/widget/TableWidget.vue
 -->
 
 <template>
@@ -24,8 +24,8 @@
       selection: widgetItem.selection,
       index: widgetItem.index,
     }"
-    @handlePageChange="(e) => withHandle(e, widgetItem, 0)"
-    @handleSelectionChange="(e) => withHandle(e, widgetItem, 1)" />
+    @handlePageChange="(e:any) => withHandle(e, widgetItem, 0)"
+    @handleSelectionChange="(e:any) => withHandle(e, widgetItem, 1)" />
 
   <!--  @handlePageChange="handlePageChange"
     @handleSelectionChange="handleSelectionChange" -->

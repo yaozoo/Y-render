@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-03-15 14:37:53
- * @LastEditTime: 2022-11-17 17:13:56
+ * @LastEditTime: 2022-11-18 17:44:02
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/components/uploadComp.vue
+ * @FilePath: /Y-render/src/components/uploadComp.vue
 -->
 
 <template>
@@ -17,7 +17,7 @@
     ref="uploadRef"
     :data="extraData"
     :drag="drag"
-    :action="fileUrl()"
+    :action="(fileUrl as any)()"
     :show-file-list="true"
     :file-list="fileList"
     :limit="imgLength"
@@ -130,9 +130,9 @@ console.log(sendFileList, "sendFileList");
 const dialogImageUrl = ref("");
 const dialogVisible = ref(false);
 
-const handleRemove: UploadProps["onRemove"] = (uploadFile) => {
+const handleRemove: any = (uploadFile: any) => {
   let index = sendFileList.findIndex(
-    (item) => item.url == uploadFile?.response?.url || uploadFile?.url
+    (item: any) => item.url == uploadFile?.response?.url || uploadFile?.url
   );
   sendFileList.splice(index, 1);
   uploadRef.value.handleRemove(uploadFile);
@@ -176,7 +176,7 @@ const handleExceed = (files: string | any[], fileList: string | any[]) => {
   return ElMessage.warning(` 文件数量不得超过 ${props.imgLength} 个`);
 };
 
-const handleError = (file) => {
+const handleError = (file: any) => {
   console.log(file, 123456);
 };
 defineExpose({ clearFiles });
