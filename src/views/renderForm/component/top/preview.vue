@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-23 15:11:36
- * @LastEditTime: 2022-11-19 15:10:04
+ * @LastEditTime: 2022-11-19 18:25:59
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/top/preview.vue
@@ -16,7 +16,8 @@
     :fullscreen="true"
     :destroy-on-close="true"
     @closed="handleClose">
-    <RenderForm :widget="widget" />
+    <RenderForm :widget="widget" :ref="renderFormRef" />
+    <el-button @click="viewData"> 查看数据 </el-button>
   </el-drawer>
 </template>
 
@@ -31,5 +32,10 @@ function showFun() {
 }
 function handleClose() {
   console.log("关闭预览");
+}
+
+let renderFormRef: any = ref(null);
+function viewData() {
+  console.log(widget);
 }
 </script>

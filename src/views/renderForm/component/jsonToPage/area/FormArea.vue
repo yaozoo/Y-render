@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2022-11-17 17:14:19
+ * @LastEditTime: 2022-11-19 18:52:38
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
 -->
 
 <template>
@@ -175,7 +175,13 @@
   </el-form>
 </template>
 <script lang="ts">
-import { computed, defineAsyncComponent, defineComponent, ref } from "vue";
+import {
+  computed,
+  defineAsyncComponent,
+  defineComponent,
+  inject,
+  ref,
+} from "vue";
 import JsonToPage from "../index.vue";
 import dayjs from "dayjs";
 
@@ -196,12 +202,13 @@ export default defineComponent({
       new Date(2000, 2, 1, 23, 59, 59),
     ]);
     let widgetItem = computed(() => props.widgetItem);
+    let widget: any = inject("widget");
 
     function withHandle(item: any) {
       // console.log(item, 9999);
       // eval(item.handle)(widgetItem.value);
       let newFun = new Function("return " + item.handle)();
-      newFun(widgetItem.value);
+      newFun(widgetItem.value, widget);
     }
 
     function setDate(val: any, prop: any) {

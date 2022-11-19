@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2022-11-17 17:14:41
+ * @LastEditTime: 2022-11-19 18:50:12
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/left/compItem.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/left/compItem.vue
 -->
 
 <template>
@@ -206,13 +206,13 @@ let container = [
         label: "查询",
         eventName: "submitForm",
         type: "primary",
-        handle: '(data)=>alert("查询",data);',
+        handle: '(curData,data)=>console.log("查询",curData,data);',
       },
       {
         label: "重置",
         eventName: "resetForm",
         type: "",
-        handle: '(data)=>console.log("重置",data);',
+        handle: '(curData,data)=>console.log("重置",curData,data);',
       },
     ],
   },

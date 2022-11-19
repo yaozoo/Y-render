@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-01 15:44:24
- * @LastEditTime: 2022-11-18 17:31:21
+ * @LastEditTime: 2022-11-19 18:48:56
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/widget/TableWidget.vue
@@ -28,7 +28,7 @@
     @handleSelectionChange="(e:any) => withHandle(e, widgetItem, 1)" />
 </template>
 <script lang="ts" setup>
-import { computed } from "vue";
+import { computed, inject } from "vue";
 
 let props: any = defineProps({
   widgetItem: {
@@ -36,9 +36,10 @@ let props: any = defineProps({
   },
 });
 let widgetItem: any = computed(() => props.widgetItem);
+let widget: any = inject("widget");
 
 function withHandle(e: any, item: any, index: any) {
   let newFun = new Function("return " + item?.eventHandle?.[index]?.handle)();
-  newFun && newFun(e, widgetItem.value);
+  newFun && newFun(e, widgetItem.value, widget);
 }
 </script>
