@@ -26,9 +26,6 @@
     }"
     @handlePageChange="(e:any) => withHandle(e, widgetItem, 0)"
     @handleSelectionChange="(e:any) => withHandle(e, widgetItem, 1)" />
-
-  <!--  @handlePageChange="handlePageChange"
-    @handleSelectionChange="handleSelectionChange" -->
 </template>
 <script lang="ts" setup>
 import { computed } from "vue";

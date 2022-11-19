@@ -1,14 +1,18 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-23 15:11:36
- * @LastEditTime: 2022-11-17 17:15:30
+ * @LastEditTime: 2022-11-19 15:13:37
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/top/viewVUE.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/top/viewVUE.vue
 -->
 
 <template>
-  <el-dialog v-model="dialogVisible" title="查看VUE" width="800px">
+  <el-dialog
+    v-model="dialogVisible"
+    :destroy-on-close="true"
+    title="查看VUE"
+    width="800px">
     <el-button
       style="
         height: 28px;

@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2022-11-17 17:15:13
+ * @LastEditTime: 2022-11-19 15:11:45
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/origins/Table.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/origins/Table.vue
 -->
 
 <template>
@@ -69,7 +69,10 @@
       <li>
         <span>高度自适应 </span>
         <div>
-          <el-radio-group v-model="curSelItem['autoHeight']" size="small">
+          <el-radio-group
+            @change="hasAutoHeight(curSelItem['autoHeight'])"
+            v-model="curSelItem['autoHeight']"
+            size="small">
             <el-radio-button :label="true" />
             <el-radio-button :label="false" />
           </el-radio-group>
@@ -161,6 +164,12 @@ let Props = defineProps({
     default: -1,
   },
 });
+
+function hasAutoHeight(bol: any) {
+  if (!bol) {
+    Props.curSelItem["tableHeight"] = "auto";
+  }
+}
 </script>
 <script lang="ts">
 export default defineComponent({

@@ -1,10 +1,10 @@
 <!--
  * @Author: 鲁遥
  * @Date: 2021-04-07 10:32:08
- * @LastEditTime: 2022-11-17 17:12:56
+ * @LastEditTime: 2022-11-19 15:04:21
  * @LastEditors: luyao
  * @Description: 
- * @FilePath: /y-render/src/components/dbsTable/dbsTable.vue
+ * @FilePath: /Y-render/src/components/dbsTable/dbsTable.vue
 -->
 
 <template>
