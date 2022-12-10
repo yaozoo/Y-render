@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-17 17:26:41
- * @LastEditTime: 2022-11-18 11:01:49
+ * @LastEditTime: 2022-12-10 14:20:09
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /Y-render/README.md
@@ -24,7 +24,7 @@ LowCode
 截图 ：
 ![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example1.jpeg)
 
-## Project setup
+## 安装依赖
 
 ```
 npm install
@@ -36,14 +36,37 @@ or
 yarn
 ```
 
-### Compiles and hot-reloads for development
+### 本地启动
 
 ```
 npm run dev
 ```
 
-### Compiles and minifies for production
+### 打包
 
 ```
 npm run build
+```
+
+### 发布 npm
+
+```
+npm run build_lib
+```
+
+### 使用教程
+
+```
+下载依赖
+npm i y-render -D
+
+main.ts引入并注入
+import YRender from "y-render";
+app.use(YRender);
+```
+
+### min
+
+```
+npm i y-render -D
 ```

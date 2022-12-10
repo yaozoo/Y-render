@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2022-11-18 18:26:34
+ * @LastEditTime: 2022-12-09 16:52:41
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/index.vue
@@ -28,6 +28,10 @@ import CompItem from "./component/left/compItem.vue";
 import Exhibit from "./component/middle/exhibit.vue";
 import Setup from "./component/right/setup.vue";
 import Top from "./component/top/index.vue";
+import eventBus from "@utils/eventBus";
+
+provide("eventBus", eventBus);
+
 let widget: any = reactive([
   {
     key: 40001,
