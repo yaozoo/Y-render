@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-17 17:26:41
- * @LastEditTime: 2022-12-10 14:20:09
+ * @LastEditTime: 2022-12-10 14:25:58
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /Y-render/README.md
@@ -63,10 +63,4 @@ npm i y-render -D
 main.ts引入并注入
 import YRender from "y-render";
 app.use(YRender);
-```
-
-### min
-
-```
-npm i y-render -D
 ```
