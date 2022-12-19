@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-16 16:28:51
- * @LastEditTime: 2022-11-17 17:14:50
+ * @LastEditTime: 2022-12-19 15:19:48
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/middle/components/items.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/middle/components/items.vue
 -->
 
 <template>
@@ -89,7 +89,9 @@
       <!--   :disabled-date="item.disabledDate"  -->
     </el-date-picker>
   </div>
-
+  <div v-if="item.type === 'Slot'" class="cus-slot">
+    slotName:{{ item.slot }}
+  </div>
   <div
     v-if="item.type === 'Table'"
     class="item-table base-item-comp-title-box"
@@ -155,5 +157,13 @@ function setDate(val: any, prop: any) {
 <style lang="less" scoped>
 .base-item-comp-title-box {
   flex: 1;
+}
+.cus-slot {
+  min-width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: bisque;
+  border: 1px solid #ccc;
 }
 </style>

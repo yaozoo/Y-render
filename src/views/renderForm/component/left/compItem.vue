@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2022-11-19 18:50:12
+ * @LastEditTime: 2022-12-19 15:24:30
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/left/compItem.vue
@@ -48,12 +48,26 @@
       </div>
     </VueDraggableNext>
   </div>
+  <div class="comp-item">
+    <el-divider>其他</el-divider>
+    <VueDraggableNext
+      chosenClass="chosen"
+      :list="otherList"
+      :group="{ name: 'base-compList', pull: 'clone', put: true }"
+      :sort="true"
+      :clone="clone"
+      class="comp-box">
+      <div v-for="item in otherList" :key="item.key" class="form-item">
+        <span>{{ item.placeholder }}</span>
+      </div>
+    </VueDraggableNext>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue-demi";
 import { VueDraggableNext } from "vue-draggable-next";
-
+// 组件
 let compList = [
   // 输入类
   {
@@ -110,6 +124,7 @@ let compList = [
   },
 ];
 
+// table
 let tables = {
   type: "Table",
   key: 30001,
@@ -238,11 +253,26 @@ let container = [
     },
   },
 ];
+
+// 其他
+let otherList = [
+  // 输入类
+  {
+    key: 50001,
+    slot: "",
+    type: "Slot",
+    placeholder: "插槽",
+    width: "100%",
+  },
+];
 function clone(origin: any) {
   //这一步最关键，没处理好，后面会数据混乱
   //通过转成字符串，让他变成一个新对象，不然拖拽第二个组件将会和第一个组件一模一样，改变第一个组件第二个、第三个也会跟着变动。
   const data = JSON.parse(JSON.stringify(origin));
   data.prop = `${data.type}_${new Date().getTime()}`;
+  if (data.type == "Slot") {
+    data.slot = `${data.type}_${new Date().getTime()}`;
+  }
   data._uuid = parseInt(
     new Date().getMilliseconds() + "" + Math.ceil(Math.random() * 100000)
   ).toString(16);

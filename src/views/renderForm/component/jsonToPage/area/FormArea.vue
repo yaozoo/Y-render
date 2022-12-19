@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2022-11-19 18:52:38
+ * @LastEditTime: 2022-12-19 15:41:39
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
@@ -10,7 +10,7 @@
 <template>
   <el-form
     style="border: 5px solid #b4d7f3; padding: 2px"
-    class="search-form-box"
+    class="form-box"
     :class="[
       !!(widgetItem?.config?.rules?.length > 0) ? 'has-rules' : 'not-rules',
       widgetItem?.config?.inline ? 'form-inline-cus' : 'form-block-cus',
@@ -32,10 +32,12 @@
             ? widgetItem?.config?.itemWidth
             : '100%',
 
-        // 就是说当前如果是inlne 并且被循环项不是容器元素的时候才能是inline-flex
+        // 就是说当前如果是inlne 并且被循环项不是容器元素的时候才能是行元素
+        // 此处使用inline-flex和inline-block 有啥区别？？？ 忘了
+        // 使用inline-flex 日期不再一行
         display:
           widgetItem?.config?.inline && !item?.isBox && item.type != 'Table'
-            ? 'inline-flex'
+            ? 'inline-block'
             : '',
       }">
       <JsonToPage
@@ -121,6 +123,11 @@
           :clearable="item.clearable"
           @change="(v:any) => setDate(v, item.prop)">
         </el-date-picker>
+        <slot v-if="item.slot" :name="item.slot"
+          ><div style="background: bisque">
+            {{ item.slot }}
+          </div>
+        </slot>
       </el-form-item>
     </div>
 
@@ -232,7 +239,8 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.search-form-box {
+.form-box {
+  // display: flex;
   vertical-align: bottom;
   align-items: center;
   .btn-box {
