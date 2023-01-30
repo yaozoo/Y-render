@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2022-12-19 15:41:39
+ * @LastEditTime: 2023-01-30 14:05:42
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
@@ -123,11 +123,17 @@
           :clearable="item.clearable"
           @change="(v:any) => setDate(v, item.prop)">
         </el-date-picker>
-        <slot v-if="item.slot" :name="item.slot"
+        <!-- <slot v-if="item.slot" :name="item.slot"
           ><div style="background: bisque">
             {{ item.slot }}
           </div>
-        </slot>
+        </slot> -->
+
+        <template-container
+          v-if="parentSlots[item.slot] && !!item.slot"
+          :template="parentSlots[item.slot]"
+          :data="item">
+        </template-container>
       </el-form-item>
     </div>
 
@@ -184,26 +190,62 @@
 <script lang="ts">
 import {
   computed,
-  defineAsyncComponent,
   defineComponent,
   inject,
   ref,
+  getCurrentInstance,
+  h,
 } from "vue";
 import JsonToPage from "../index.vue";
 import dayjs from "dayjs";
+
+/**
+ * 获取父组件
+ */
+const getDataFormComponent: any = (component: {
+  type: { name: string };
+  parent: any;
+}) => {
+  if (component && component.type.name === "RenderFormComp") {
+    return component;
+  }
+
+  if (component && component.parent) {
+    const parent = component.parent;
+    return getDataFormComponent(parent);
+  }
+};
 
 export default defineComponent({
   name: "FormAreaWidget",
   components: {
     JsonToPage,
+    TemplateContainer: {
+      functional: true,
+      props: {
+        template: {
+          type: Function,
+        },
+        data: {
+          type: Object,
+        },
+      },
+      render: (props: any, ctx: any) =>
+        h("div", { placeholder: 111 }, [props.template(props.data)]),
+    },
   },
+
   props: {
     widgetItem: {
       type: Object,
       default: () => {},
     },
   },
+
   setup(props) {
+    const dataTree = getDataFormComponent(getCurrentInstance());
+    const parentSlots = dataTree?.slots;
+
     let defaultTime = ref([
       new Date(2000, 1, 1, 0, 0, 0),
       new Date(2000, 2, 1, 23, 59, 59),
@@ -233,6 +275,7 @@ export default defineComponent({
       defaultTime,
       withHandle,
       setDate,
+      parentSlots,
     };
   },
 });
