@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2022-11-17 17:12:10
+ * @LastEditTime: 2023-01-30 16:47:17
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/jsonToPage/area/CardArea.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/CardArea.vue
 -->
 
 <template>
@@ -21,8 +21,7 @@
   </el-card>
 </template>
 <script lang="ts">
-import { computed, defineAsyncComponent, defineComponent, ref } from "vue";
-// import JsonToPage from "../index.vue";
+import { computed, defineComponent, inject } from "vue";
 export default defineComponent({
   name: "CardAreaWidget",
   components: {
@@ -36,14 +35,13 @@ export default defineComponent({
   },
   setup(props) {
     let widgetItem = computed(() => props.widgetItem);
+    let widget: any = inject("widget");
 
     function withHandle(item: any) {
-      console.log(item, 9999);
       // eval(item.handle)(widgetItem.value);
       let newFun = new Function("return " + item.handle)();
-      newFun(widgetItem.value);
+      newFun(widgetItem.value, widget);
     }
-    // let a = ref('<el-button size="small" class="button">btn</el-button>');
     return {
       widgetItem,
       withHandle,

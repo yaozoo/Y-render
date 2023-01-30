@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2023-01-30 14:05:42
+ * @LastEditTime: 2023-01-30 16:46:00
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
@@ -129,11 +129,11 @@
           </div>
         </slot> -->
 
-        <template-container
+        <templateContainer
           v-if="parentSlots[item.slot] && !!item.slot"
           :template="parentSlots[item.slot]"
           :data="item">
-        </template-container>
+        </templateContainer>
       </el-form-item>
     </div>
 
@@ -230,8 +230,7 @@ export default defineComponent({
           type: Object,
         },
       },
-      render: (props: any, ctx: any) =>
-        h("div", { placeholder: 111 }, [props.template(props.data)]),
+      render: (props: any, ctx: any) => h("div", [props.template(props.data)]),
     },
   },
 

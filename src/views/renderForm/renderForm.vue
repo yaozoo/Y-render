@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 18:46:06
- * @LastEditTime: 2022-12-10 14:13:40
+ * @LastEditTime: 2023-01-30 16:45:39
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/renderForm.vue
@@ -15,7 +15,7 @@
   </ul>
 </template>
 <script setup lang="ts">
-import { computed, defineComponent } from "vue";
+import { computed, defineComponent, provide } from "vue";
 import { cloneDeep } from "lodash";
 import JsonToPage from "./component/jsonToPage/index.vue";
 let props: any = defineProps({
@@ -26,6 +26,8 @@ let props: any = defineProps({
 });
 
 let widget: any = computed(() => props.widget);
+provide("widget", props.widget);
+
 // 把数据克隆一份
 let cloneData = cloneDeep(widget.value);
 // 处理数据 把children中的prop放在data中
