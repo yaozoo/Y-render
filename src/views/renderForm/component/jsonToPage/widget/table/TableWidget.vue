@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-01 15:44:24
- * @LastEditTime: 2022-11-19 18:48:56
+ * @LastEditTime: 2023-01-31 11:59:37
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/widget/TableWidget.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/widget/table/TableWidget.vue
 -->
 
 <template>
@@ -29,6 +29,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, inject } from "vue";
+import dbsTable from "./dbsTable.vue";
 
 let props: any = defineProps({
   widgetItem: {

@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2022-12-19 15:24:30
+ * @LastEditTime: 2023-01-30 17:57:58
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/left/compItem.vue
@@ -163,21 +163,25 @@ let tables = {
       key: "name",
       minWidth: 100,
       width: 250,
+      slot: "",
     },
     {
       title: "年龄",
       key: "age",
       minWidth: 100,
+      slot: "",
     },
     {
       title: "性别",
       key: "sex",
       minWidth: 100,
+      slot: "",
     },
     {
       title: "住址",
       key: "adress",
       minWidth: 500,
+      slot: "",
     },
   ],
   eventHandle: [

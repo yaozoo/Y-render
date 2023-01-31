@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2022-11-19 15:11:45
+ * @LastEditTime: 2023-01-31 11:13:59
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/origins/Table.vue
@@ -90,58 +90,88 @@
         </div>
       </li>
 
+      <el-divider> 列属性 </el-divider>
       <li>
-        <span>列属性 </span>
         <div>
           <ol>
             <li
-              style="padding: 10px 0"
+              style="padding: 5px 2px; border: 1px solid #eee; margin: 5px 0"
               v-for="(item, index) in curSelItem.columns">
-              <el-input
-                v-model="item.title"
-                placeholder="属性名"
-                style="width: 35%; margin-right: 5%"></el-input>
-              <el-input
-                v-model="item.key"
-                placeholder="属性值"
-                style="width: 35%; margin-right: 5%"></el-input>
-              <el-input
-                v-model="item.width"
-                placeholder="宽度"
+              <p
                 style="
-                  width: 35%;
-                  margin-right: 5%;
-                  margin-top: 2px;
-                "></el-input>
-              <el-input
-                v-model="item.minWidth"
-                placeholder="最小宽度"
-                style="
-                  width: 35%;
-                  margin-right: 5%;
-                  margin-top: 2px;
-                "></el-input>
-              <el-icon
-                @click="
-                  () => {
-                    curSelItem.columns.push(JSON.parse(JSON.stringify(item)));
-                  }
-                "
-                color="green"
-                title="添加一行"
-                ><CirclePlusFilled
-              /></el-icon>
-              <el-icon
-                v-show="curSelItem.columns.length > 1"
-                @click="
-                  () => {
-                    curSelItem.columns.splice(index, 1);
-                  }
-                "
-                color="red"
-                title="删除一行"
-                ><RemoveFilled
-              /></el-icon>
+                  background-color: #eee;
+                  font-size: 10px;
+                  font-weight: 700;
+                ">
+                第{{ index + 1 }}列
+              </p>
+              <!-- <div style="display: flex; margin-bottom: 2px">
+                <span style="margin-right: 5px; font-size: 10px"
+                  >是否是插槽
+                </span>
+                <el-radio-group v-model="item['isSlot']" size="small">
+                  <el-radio-button :label="true" />
+                  <el-radio-button :label="false" />
+                </el-radio-group>
+              </div> -->
+              <div class="columns-item">
+                <span class="item-name">属性名 </span>
+                <el-input
+                  v-model="item.title"
+                  placeholder="属性名"
+                  class="set-input"></el-input>
+              </div>
+              <div class="columns-item">
+                <span class="item-name">属性值 </span>
+                <el-input
+                  v-model="item.key"
+                  placeholder="属性值"
+                  class="set-input"></el-input>
+              </div>
+              <div class="columns-item">
+                <span class="item-name">宽度 </span>
+                <el-input
+                  v-model="item.width"
+                  placeholder="宽度"
+                  class="set-input"></el-input>
+              </div>
+              <div class="columns-item">
+                <span class="item-name">最小宽度 </span>
+                <el-input
+                  v-model="item.minWidth"
+                  class="set-input"
+                  placeholder="最小宽度"></el-input>
+              </div>
+              <div class="columns-item">
+                <span class="item-name">插槽名称 </span>
+                <el-input
+                  v-model="item.slot"
+                  class="set-input"
+                  placeholder="插槽名称"></el-input>
+              </div>
+              <div class="columns-item">
+                <el-icon
+                  @click="
+                    () => {
+                      curSelItem.columns.push(JSON.parse(JSON.stringify(item)));
+                    }
+                  "
+                  color="green"
+                  title="添加一行"
+                  ><CirclePlusFilled
+                /></el-icon>
+                <el-icon
+                  v-show="curSelItem.columns.length > 1"
+                  @click="
+                    () => {
+                      curSelItem.columns.splice(index, 1);
+                    }
+                  "
+                  color="red"
+                  title="删除一行"
+                  ><RemoveFilled
+                /></el-icon>
+              </div>
             </li>
           </ol>
         </div>
@@ -205,6 +235,25 @@ export default defineComponent({
   li {
     border: 1px solid #eee;
     margin: 5px 0;
+  }
+}
+
+:deep(.columns-item) {
+  display: inline-flex;
+  align-items: baseline;
+  margin-bottom: 2px;
+  width: 50%;
+  .item-name {
+    margin-right: 5px;
+    font-size: 10px;
+    display: inline-block;
+    width: 48px;
+    text-align: right;
+  }
+  .set-input {
+    flex: 0.9;
+    margin-right: 1%;
+    margin-top: 2px;
   }
 }
 </style>
