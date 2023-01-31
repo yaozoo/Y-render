@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-23 15:11:36
- * @LastEditTime: 2022-11-19 15:13:39
+ * @LastEditTime: 2023-01-31 17:43:02
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/top/viewJSON.vue
@@ -46,8 +46,8 @@ const copyText = (text: any, time = 400) => {
   if (timer) clearInterval(timer);
   timer = setTimeout(async () => {
     let oInput = document.createElement("input") as any; //创建input节点
-    // oInput.value = JSON.stringify(text); //给input的value赋值
-    oInput.value = text; //给input的value赋值
+    oInput.value = JSON.stringify(text); //给input的value赋值
+    // oInput.value = text; //给input的value赋值
     document.body.appendChild(oInput); //向页面插入input节点
     oInput.select(); // 选中input
     try {

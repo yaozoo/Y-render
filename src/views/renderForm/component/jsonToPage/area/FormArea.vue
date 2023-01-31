@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2023-01-30 16:46:00
+ * @LastEditTime: 2023-01-31 17:35:25
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/FormArea.vue
@@ -123,17 +123,17 @@
           :clearable="item.clearable"
           @change="(v:any) => setDate(v, item.prop)">
         </el-date-picker>
-        <!-- <slot v-if="item.slot" :name="item.slot"
-          ><div style="background: bisque">
-            {{ item.slot }}
-          </div>
-        </slot> -->
 
         <templateContainer
           v-if="parentSlots[item.slot] && !!item.slot"
           :template="parentSlots[item.slot]"
           :data="item">
         </templateContainer>
+        <slot v-if="item.slot" :name="item.slot"
+          ><div style="background: bisque">
+            {{ item.slot }}
+          </div>
+        </slot>
       </el-form-item>
     </div>
 

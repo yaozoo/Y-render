@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2023-01-31 11:13:59
+ * @LastEditTime: 2023-01-31 17:39:33
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/origins/Table.vue
@@ -91,6 +91,7 @@
       </li>
 
       <el-divider> 列属性 </el-divider>
+      <span class="red" style="font-size: 10px">插槽名称必须保持其唯一性</span>
       <li>
         <div>
           <ol>
@@ -103,7 +104,7 @@
                   font-size: 10px;
                   font-weight: 700;
                 ">
-                第{{ index + 1 }}列
+                &nbsp; 第{{ index + 1 }}列
               </p>
               <!-- <div style="display: flex; margin-bottom: 2px">
                 <span style="margin-right: 5px; font-size: 10px"
@@ -149,6 +150,7 @@
                   class="set-input"
                   placeholder="插槽名称"></el-input>
               </div>
+
               <div class="columns-item">
                 <el-icon
                   @click="

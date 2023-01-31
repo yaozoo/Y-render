@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-08 15:37:13
- * @LastEditTime: 2022-11-17 17:15:22
+ * @LastEditTime: 2023-01-31 17:46:18
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/top/index.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/top/index.vue
 -->
 
 <template>
@@ -30,6 +30,7 @@ let router = useRouter();
 
 function refreshClear() {
   router.go(0);
+  location.reload();
 }
 
 let viewJSONRef: any = ref(null);
