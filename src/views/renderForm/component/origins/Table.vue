@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2023-01-31 17:39:33
+ * @LastEditTime: 2023-01-31 20:39:27
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/origins/Table.vue
@@ -155,7 +155,11 @@
                 <el-icon
                   @click="
                     () => {
-                      curSelItem.columns.push(JSON.parse(JSON.stringify(item)));
+                      curSelItem.columns.splice(
+                        index,
+                        0,
+                        JSON.parse(JSON.stringify(item))
+                      );
                     }
                   "
                   color="green"

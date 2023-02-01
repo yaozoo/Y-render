@@ -1,10 +1,10 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-17 16:43:10
- * @LastEditTime: 2022-11-17 17:14:48
+ * @LastEditTime: 2023-01-31 17:51:17
  * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/middle/components/areas.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/middle/components/areas.vue
 -->
 
 <template>
@@ -14,7 +14,7 @@
     <template #header v-if="widgetItem.config.hasCardHeader">
       <div class="card-header">
         <span>{{ widgetItem.config.cardName }}</span>
-        <el-button class="button">btn</el-button>
+        <!-- <el-button class="button">btn</el-button> -->
       </div>
     </template>
     <VueDraggableNext
