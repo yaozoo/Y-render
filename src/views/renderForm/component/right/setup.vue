@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 20:07:46
- * @LastEditTime: 2022-11-18 17:31:14
+ * @LastEditTime: 2023-02-01 17:57:54
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/right/setup.vue
@@ -10,6 +10,11 @@
 <template>
   <div class="setup">
     <el-divider>设置 {{ selItem?.type }} </el-divider>
+    <em
+      class="red"
+      style="text-align: left; font-size: 12px; width: 100%; display: block"
+      >所有插槽名称必须保持其唯一性</em
+    >
     <div v-if="!!selItem && selItem?.type">
       <component v-if="hasChange" :is="selItem?.type" :curSelItem="selItem" />
     </div>

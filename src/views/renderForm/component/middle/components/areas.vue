@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-17 16:43:10
- * @LastEditTime: 2023-01-31 17:51:17
+ * @LastEditTime: 2023-02-01 17:55:57
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/middle/components/areas.vue
@@ -14,7 +14,9 @@
     <template #header v-if="widgetItem.config.hasCardHeader">
       <div class="card-header">
         <span>{{ widgetItem.config.cardName }}</span>
-        <!-- <el-button class="button">btn</el-button> -->
+        <span class="card-header-slot" v-if="!!widgetItem.config.cardHeaderSlot"
+          >slotName:{{ widgetItem.config.cardHeaderSlot }}</span
+        >
       </div>
     </template>
     <VueDraggableNext
@@ -323,5 +325,15 @@ export default defineComponent({
   position: absolute;
   top: 1px;
   right: 2px;
+}
+
+.card-header-slot {
+  min-width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: bisque;
+  color: #666;
+  border: 1px solid #ccc;
 }
 </style>

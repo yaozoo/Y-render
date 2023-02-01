@@ -2,10 +2,10 @@ template
 <!--
     * @Author: luyao
     * @Date: 2022-08-22 15:38:47
- * @LastEditTime: 2022-11-17 17:14:56
+ * @LastEditTime: 2023-02-01 17:50:43
     * @Description: 
  * @LastEditors: luyao
- * @FilePath: /y-render/src/views/renderForm/component/origins/CardArea.vue
+ * @FilePath: /Y-render/src/views/renderForm/component/origins/CardArea.vue
    -->
 
 <template>
@@ -28,6 +28,13 @@ template
         <el-input
           style="width: 100px"
           v-model="curSelItem.config.cardName"
+          size="small"></el-input>
+      </li>
+      <li>
+        <span>卡片头部slot </span>
+        <el-input
+          style="width: 100px"
+          v-model="curSelItem.config.cardHeaderSlot"
           size="small"></el-input>
       </li>
       <li>

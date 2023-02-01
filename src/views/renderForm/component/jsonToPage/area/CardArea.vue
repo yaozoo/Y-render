@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-26 10:54:38
- * @LastEditTime: 2023-01-30 16:47:17
+ * @LastEditTime: 2023-02-01 19:08:04
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/jsonToPage/area/CardArea.vue
@@ -13,19 +13,74 @@
     v-if="widgetItem.type == 'CardArea'"
     shadow="hover">
     <template #header v-if="widgetItem.config.hasCardHeader">
-      <div class="card-header">
+      <div
+        class="card-header"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        ">
         <span>{{ widgetItem.config.cardName }}</span>
+        <templateContainer
+          v-if="
+            slots[widgetItem.config.cardHeaderSlot] &&
+            !!widgetItem.config.cardHeaderSlot
+          "
+          :template="slots[widgetItem.config.cardHeaderSlot]"
+          :row="widgetItem">
+        </templateContainer>
       </div>
     </template>
     <FormArea :widgetItem="widgetItem" />
   </el-card>
 </template>
 <script lang="ts">
-import { computed, defineComponent, inject } from "vue";
+import { computed, defineComponent, inject, getCurrentInstance, h } from "vue";
+
+/**
+ * 获取父组件
+ */
+const getDataFormComponent: any = (component: {
+  type: { name: string };
+  parent: any;
+}) => {
+  if (component && component.type.name === "RenderFormComp") {
+    return component;
+  }
+
+  if (component && component.parent) {
+    const parent = component.parent;
+    return getDataFormComponent(parent);
+  }
+};
+
 export default defineComponent({
   name: "CardAreaWidget",
   components: {
     // JsonToPage,
+    TemplateContainer: {
+      functional: true,
+      props: {
+        template: {
+          type: Function,
+        },
+        // column: {
+        //   type: Object,
+        // },
+        row: {
+          type: Object,
+        },
+        // index: {
+        //   type: String || Number,
+        // },
+      },
+      render: (props: any, ctx: any) => {
+        return h("div", [
+          // props.template({ row: props.row, $index: props.index }),
+          props.template({ row: props.row }),
+        ]);
+      },
+    },
   },
   props: {
     widgetItem: {
@@ -33,7 +88,12 @@ export default defineComponent({
       default: () => {},
     },
   },
+
   setup(props) {
+    // const dataTree = getDataFormComponent(getCurrentInstance());
+    const slots = getDataFormComponent(getCurrentInstance()).slots;
+    console.log("card-slot", slots);
+
     let widgetItem = computed(() => props.widgetItem);
     let widget: any = inject("widget");
 
@@ -45,6 +105,7 @@ export default defineComponent({
     return {
       widgetItem,
       withHandle,
+      slots,
     };
   },
 });
@@ -84,5 +145,11 @@ export default defineComponent({
     margin-left: 0px !important;
     margin-right: 10px;
   }
+}
+
+:deep(.card-header) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 </style>

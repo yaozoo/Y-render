@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-15 17:40:10
- * @LastEditTime: 2023-01-30 17:57:58
+ * @LastEditTime: 2023-02-01 17:51:33
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/left/compItem.vue
@@ -247,6 +247,7 @@ let container = [
     config: {
       hasCardHeader: true,
       cardName: "我的卡片",
+      cardHeaderSlot: "cardheaderslot",
       allDisabled: false,
       inline: true,
       itemWidth: "auto",
