@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2023-01-31 20:39:27
+ * @LastEditTime: 2023-02-07 16:35:22
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/origins/Table.vue
@@ -91,7 +91,7 @@
       </li>
 
       <el-divider> 列属性 </el-divider>
-      <span class="red" style="font-size: 10px">插槽名称必须保持其唯一性</span>
+      <!-- <span class="red" style="font-size: 10px">插槽名称必须保持其唯一性</span> -->
       <li>
         <div>
           <ol>

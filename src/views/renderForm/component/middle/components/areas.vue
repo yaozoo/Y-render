@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-10-17 16:43:10
- * @LastEditTime: 2023-02-01 17:55:57
+ * @LastEditTime: 2023-02-28 14:21:40
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/middle/components/areas.vue
@@ -249,7 +249,8 @@ export default defineComponent({
     text-align: end;
   }
   &:hover {
-    background-color: rgba(32, 178, 170, 0.6);
+    // background-color: #faab78;
+    background-color: #c6d2ff;
     .set-box {
       display: block;
       z-index: 10;
@@ -269,9 +270,9 @@ export default defineComponent({
     left: 0 !important;
   }
   &:hover {
-    border: 1px solid red;
+    border: 1px solid blue;
     > .set-box {
-      background: green;
+      background: #2192ff;
     }
   }
 }
@@ -284,13 +285,13 @@ export default defineComponent({
   }
   &:hover {
     > .set-box {
-      background: #ff8d29;
+      background: #2192ff;
     }
   }
 }
 .actItem {
   color: #333;
-  background-color: lightseagreen;
+  background-color: #afb4ff;
   border-color: #8c8c8c;
 }
 
@@ -332,7 +333,7 @@ export default defineComponent({
   height: 30px;
   line-height: 30px;
   text-align: center;
-  background-color: bisque;
+  background-color: #ffd581;
   color: #666;
   border: 1px solid #ccc;
 }

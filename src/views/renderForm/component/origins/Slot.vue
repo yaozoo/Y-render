@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-08-19 16:12:57
- * @LastEditTime: 2022-12-19 15:39:14
+ * @LastEditTime: 2023-02-07 16:35:31
  * @Description: 
  * @LastEditors: luyao
  * @FilePath: /Y-render/src/views/renderForm/component/origins/Slot.vue
@@ -10,11 +10,11 @@
 <template>
   <div class="wrapper">
     <ul class="form-set">
-      <em
+      <!-- <em
         class="red"
         style="text-align: center; font-size: 12px; width: 100%; display: block"
         >插槽名称必须保持其唯一性</em
-      >
+      > -->
       <li>
         <span>插槽名 </span>
         <el-input v-model="curSelItem['slot']"></el-input>
