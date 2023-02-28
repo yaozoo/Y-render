@@ -1,7 +1,7 @@
 <!--
  * @Author: luyao
  * @Date: 2022-11-17 17:26:41
- * @LastEditTime: 2022-12-10 14:25:58
+ * @LastEditTime: 2023-02-28 14:47:05
  * @Description:
  * @LastEditors: luyao
  * @FilePath: /Y-render/README.md
@@ -21,8 +21,13 @@ LowCode
 截图 ：
 ![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example.gif)
 
-截图 ：
 ![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example1.jpeg)
+
+![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example2.jpeg)
+
+![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example3.jpg)
+
+![Alt text](https://github.com/LYao0919/Y-render/blob/master/src/assets/example4.jpg)
 
 ## 安装依赖
 
